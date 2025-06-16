@@ -19,11 +19,12 @@ app.post('/livros', (req, res) => {
     res.status(201).send(`Livro adicionado com sucesso!`);  
 })
 
-add.put('/livros/:id', (req, res) => {
+app.put('/livros/:id', (req, res) => {
     const index = buscalivro(req.params.id);
     livros[index].titulo = req.body.titulo;
     res.status(200).json(livros);
 });
+
 
 app.delete('/livros/:id', (req, res) => {
     const index = buscalivro(req.params.id);
